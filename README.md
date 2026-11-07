@@ -22,6 +22,7 @@ python -m app.seed
 uvicorn app.main:app --reload
 ```
 Open http://localhost:8000/docs for interactive API documentation.
+To enable the optional web-research endpoint, set `TAVILY_API_KEY` in `backend/.env`.
 
 ## Start the frontend (second terminal)
 ```bash
@@ -31,6 +32,9 @@ cp .env.example .env.local  # Windows: copy .env.example .env.local
 npm run dev
 ```
 Open http://localhost:3000.
+
+## Deploy on Vultr
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for the Ubuntu server and Docker Compose steps.
 
 ## Tests
 From `backend`, run `pytest`. Tests use the pure scoring service and do not need a database.
